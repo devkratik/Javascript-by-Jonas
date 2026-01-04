@@ -69,7 +69,7 @@ Odd of draw: 3.25
 Odd of victory Borrussia Dortmund: 6.5
 Get the team names directly from the game object, don't hardcode them
 (except for "draw"). Hint: Note how the odds and the game objects have the
-same property names 😉
+same property names 
 */
 
 /*
