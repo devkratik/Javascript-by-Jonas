@@ -5,7 +5,7 @@ const game = {
   team2: "Borrussia Dortmund",
   players: [
     [
-      "Neuer",
+      "Neuuer",
       "Pavard",
       "Martinez",
       "Alaba",
