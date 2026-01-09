@@ -52,7 +52,7 @@ Your tasks:
 */
 const [player1, player2] = game.players;
 
-console.log("Team 1: ", player1);
+console.log("Team1: ", player1);
 console.log("Team 2: ", player2);
 
 /*
