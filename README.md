@@ -1,1 +1,1 @@
-# Javascript-by-Jonas
+# Udemy course by Jonas on Javascript
