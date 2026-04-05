@@ -91,6 +91,10 @@ console.log(team2);
 6. Write a function ('printGoals') that receives an arbitrary number of player
 names (not an array) and prints each of them to the console, along with the
 number of goals that were scored in total (number of player names passed in)
+
+Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
+Then, call the function again with players from game.scored
+
 */
 const printGoals = function (...arr) {
   console.log(arr);
@@ -105,7 +109,3 @@ operator.
 */
 team1 < team2 && console.log(`Team 1 more likely to win!`);
 team2 < team1 && console.log(`Team 2 more likely to win!`);
-/*
-Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
-Then, call the function again with players from game.scored
-*/
