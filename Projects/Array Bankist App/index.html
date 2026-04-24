@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar">
+      <div class="navbar__message" id="nav-msg">Login to get started</div>
+      <figure class="navbar__logo">
+        <img
+          src="./assets/logo.png"
+          alt="Brand logo"
+          class="navbar__logo-img"
+        />
+      </figure>
+      <form class="login" id="login-form">
+        <input
+          type="text"
+          class="login__name"
+          id="input-name"
+          placeholder="User"
+        />
+        <input
+          type="password"
+          class="login__password"
+          id="input-pass"
+          placeholder="PIN"
+        />
+        <button type="submit" class="login__submit" id="login-submit">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </nav>
+  </body>
+</html>

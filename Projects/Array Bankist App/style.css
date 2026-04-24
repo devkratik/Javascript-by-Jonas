@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(
+    153deg,
+    rgba(248, 249, 250, 1) 0%,
+    rgba(224, 230, 237, 1) 100%
+  );
+  padding: 1.2rem 2.4rem;
+}
+
+/*NAVBAR*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.navbar__message {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.navbar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.6rem;
+  flex-shrink: 0;
+}
+
+.navbar__logo-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.4rem;
+  width: 30rem;
+}
+
+.login > input {
+  outline: none;
+  border: 1px solid gray;
+  background-color: #fff;
+  color: rgb(47, 47, 47);
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 0.4rem 1.6rem;
+  border-radius: 14px;
+  width: 100%;
+}
+
+.login__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 1.8rem;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 2px 4px #00000014;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.login__submit:active {
+  box-shadow: none;
+}
