@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bankist App</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -40,5 +41,96 @@
         </button>
       </form>
     </nav>
+    <!--Main-->
+    <main class="container" id="app-container">
+      <div class="info" id="info-container">
+        <p class="info__title">Current Balance</p>
+        <p class="info__subtitle">
+          As of <span class="info__time" id="info-timings">. . .</span>
+        </p>
+      </div>
+      <div class="balance" id="total-balance">
+        <span class="balance__currency">₹</span>&nbsp;<span
+          class="balance__value"
+          id="balance-value"
+          >00,000</span
+        >
+      </div>
+      <div class="movements" id="movements-container">
+        <!--transaction movements goes here dynamically-->
+      </div>
+      <div class="card transfer" id="transfer">
+        <div class="card__title">Transfer money</div>
+        <form class="card__form" id="transfer-form">
+          <div class="group">
+            <input type="text" id="reciever-acnt" />
+            <label for="">Transfer to</label>
+          </div>
+          <div class="group">
+            <input type="number" id="transfer-amount" />
+            <label for="">Amount</label>
+          </div>
+          <button type="submit" id="transfer-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+      <div class="card request" id="request">
+        <div class="card__title">Request loan</div>
+        <form class="card__form" id="request-form">
+          <div class="group">
+            <input type="number" id="request-amount" />
+            <label for="">Amount</label>
+          </div>
+          <button type="submit" id="request-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+      <div class="card close" id="close-acnt">
+        <div class="card__title">Close account</div>
+        <form class="card__form" id="close-form">
+          <div class="group">
+            <input type="text" id="close-username" />
+            <label for="">Confirm user</label>
+          </div>
+          <div class="group">
+            <input type="password" id="close-account-pass" />
+            <label for="">Confirm PIN</label>
+          </div>
+          <button type="submit" id="close-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+      <div class="summary" id="summary">
+        <div class="incoming">
+          <span class="incoming__symbol">IN</span>
+          <p class="incoming__value">
+            <span class="incoming__currency">₹</span>&nbsp;
+            <span id="incoming-value">0,000</span>
+          </p>
+        </div>
+        <div class="outgoing">
+          <span class="outgoing__symbol">OUT</span>
+          <p class="outgoing__value">
+            <span class="outgoing__currency">₹</span>&nbsp;
+            <span id="outgoing-value">0,000</span>
+          </p>
+        </div>
+        <div class="interest">
+          <span class="interest__symbol">INTEREST</span>
+          <p class="interest__value">
+            <span class="interest__currency">₹</span>
+            <span id="interest-value">0,000</span>
+          </p>
+        </div>
+        <div class="sort" id="sort-btn">
+          <span class="sort__symbol"> <i class="fas fa-arrow-down"></i> </span
+          >Sort
+        </div>
+      </div>
+      <div class="timer" id="countdown-timer">timer</div>
+    </main>
   </body>
 </html>

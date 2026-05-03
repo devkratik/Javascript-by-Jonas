@@ -1,8 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* ================================
+   GLOBAL RESET + DESIGN SYSTEM
+================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --text-main: #1f2937;
+  --text-sub: #6b7280;
+  --border: #e5e7eb;
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
 
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,76 +32,386 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
   min-height: 100vh;
-  background: linear-gradient(
-    153deg,
-    rgba(248, 249, 250, 1) 0%,
-    rgba(224, 230, 237, 1) 100%
-  );
-  padding: 1.2rem 2.4rem;
+  padding: 2rem;
 }
 
-/*NAVBAR*/
+/* ================================
+   NAVBAR
+================================ */
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  background: var(--card-bg);
+  padding: 1.6rem 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
 }
+
 .navbar__message {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--text-sub);
 }
+
 .navbar__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 5.6rem;
+  width: 5rem;
   flex-shrink: 0;
 }
 
 .navbar__logo-img {
   width: 100%;
-  object-fit: cover;
-  object-position: center;
 }
+
+/* NAVBAR LOGIN FORM */
 
 .login {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1.4rem;
-  width: 30rem;
+  gap: 1rem;
 }
 
-.login > input {
-  outline: none;
-  border: 1px solid gray;
-  background-color: #fff;
-  color: rgb(47, 47, 47);
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-  padding: 0.4rem 1.6rem;
-  border-radius: 14px;
+.login input {
   width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.login input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
 }
 
 .login__submit {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login__submit:hover {
+  background: var(--primary-hover);
+}
+
+/* ================================
+   MAIN CONTAINER (GRID)
+================================ */
+
+.container {
+  width: 100%;
+  max-width: 110rem;
+  margin: 3rem auto;
+  gap: 2.4rem;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  grid-template-areas:
+    "info balance"
+    "movements transfer"
+    "movements request"
+    "movements close"
+    "summary countdown";
+  opacity: 0;
+}
+
+/* ================================
+   INFO + BALANCE
+================================ */
+
+.info {
+  grid-area: info;
+
+  /* border: 1px solid purple; */
+}
+
+.info__title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.info__subtitle {
+  font-size: 1.6rem;
+  color: var(--text-sub);
+}
+
+.balance {
+  grid-area: balance;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  font-size: 4.6rem;
+  font-weight: 600;
+  color: var(--primary);
+
+  /* border: 1px solid orange; */
+}
+
+/* ================================
+   MOVEMENTS
+================================ */
+
+.movements {
+  grid-area: movements;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.movements__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.8rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 1px 8px #00000015;
+}
+
+.movements__type {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.movements__type--deposit {
+  background: linear-gradient(120deg, #5ff05f 0%, #9fff9f 100%);
+}
+.movements__type--withdrawal {
+  background: linear-gradient(120deg, #e74500 0%, #fa9191 100%);
+}
+
+.movements__value {
+  font-size: 1.6rem;
+}
+
+/* ================================
+   CARDS (TRANSFER / REQUEST / CLOSE)
+================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 2.4rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__title {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.card__form {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  /* border: 1px solid red; */
+}
+
+/* input group */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  /* border: 1px solid green; */
+}
+
+.group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.group label {
+  font-size: 1.2rem;
+  color: var(--text-sub);
+}
+
+/* button */
+
+.card__form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card__form button:hover {
+  background: var(--primary-hover);
+}
+
+/* variants */
+
+.transfer {
+  grid-area: transfer;
+  border-left: 4px solid var(--success);
+}
+
+.request {
+  grid-area: request;
+  border-left: 4px solid var(--warning);
+}
+
+.close {
+  grid-area: close;
+  border-left: 4px solid var(--danger);
+}
+
+/* ================================
+   SUMMARY
+================================ */
+
+.summary {
+  grid-area: summary;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  font-size: 1.8rem;
-  padding: 0.4rem;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0px 2px 4px #00000014;
-  transition: all 0.4s ease;
-  cursor: pointer;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
 }
 
-.login__submit:active {
+.incoming,
+.outgoing,
+.interest {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.incoming__symbol,
+.outgoing__symbol,
+.interest__symbol {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.incoming__value,
+.outgoing__value,
+.interest__value {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.incoming__value {
+  color: var(--success);
+}
+
+.outgoing__value {
+  color: var(--danger);
+}
+
+.interest__value {
+  color: var(--primary);
+}
+
+.sort {
+  font-size: 1.6rem;
+  background: var(--primary-light);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.sort:hover {
+  box-shadow: var(--shadow-md);
+}
+.sort:active {
   box-shadow: none;
+}
+
+/* ================================
+   TIMER
+================================ */
+
+.timer {
+  grid-area: countdown;
+  text-align: right;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-areas:
+      "info balance"
+      "movements movements"
+      "movements movements"
+      "movements movements"
+      "summary summary"
+      "transfer transfer"
+      "request request"
+      "close close"
+      "countdown countdown";
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .navbar__message {
+    width: 100%;
+    text-align: center;
+    order: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    gap: 2.5rem;
+  }
+
+  .card {
+    padding: 1.6rem;
+  }
+
+  .balance {
+    font-size: 3.2rem;
+  }
+  .info__subtitle {
+    font-size: 1.4rem;
+  }
 }
