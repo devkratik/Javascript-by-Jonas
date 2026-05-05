@@ -185,8 +185,16 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0.4rem 0.8rem;
+  margin-right: 2rem;
   border-radius: 20px;
   color: #fff;
+}
+
+.movements__date {
+  margin-right: auto;
+  font-size: 1.2rem;
+  color: var(--text-sub);
+  font-weight: 500;
 }
 
 .movements__type--deposit {
