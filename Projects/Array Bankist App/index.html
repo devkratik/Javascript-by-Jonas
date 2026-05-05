@@ -50,11 +50,7 @@
         </p>
       </div>
       <div class="balance" id="total-balance">
-        <span class="balance__currency">₹</span>&nbsp;<span
-          class="balance__value"
-          id="balance-value"
-          >00,000</span
-        >
+        <span class="balance__value" id="balance-value">00,000</span>
       </div>
       <div class="movements" id="movements-container">
         <!--transaction movements goes here dynamically-->
@@ -107,21 +103,18 @@
         <div class="incoming">
           <span class="incoming__symbol">IN</span>
           <p class="incoming__value">
-            <span class="incoming__currency">₹</span>&nbsp;
             <span id="incoming-value">0,000</span>
           </p>
         </div>
         <div class="outgoing">
           <span class="outgoing__symbol">OUT</span>
           <p class="outgoing__value">
-            <span class="outgoing__currency">₹</span>&nbsp;
             <span id="outgoing-value">0,000</span>
           </p>
         </div>
         <div class="interest">
           <span class="interest__symbol">INTEREST</span>
           <p class="interest__value">
-            <span class="interest__currency">₹</span>
             <span id="interest-value">0,000</span>
           </p>
         </div>
@@ -130,7 +123,9 @@
           >Sort
         </div>
       </div>
-      <div class="timer" id="countdown-timer">timer</div>
+      <div class="timer">
+        You will be logged out in <span id="countdown-timer"></span>
+      </div>
     </main>
   </body>
 </html>
